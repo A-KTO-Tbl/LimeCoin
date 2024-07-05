@@ -213,7 +213,7 @@ class HPV_LimeCoin:
         '''Активация бота'''
 
         while True:
-            # try:
+            try:
                 if self.Get_Info()['Status']:
                     self.Logging('Success', self.Name, '🟢', 'Инициализация успешна!')
                     INFO = self.Get_Info()
@@ -287,8 +287,8 @@ class HPV_LimeCoin:
                 else: # Если аутентификация не успешна
                     self.Logging('Error', self.Name, '🔴', 'Ошибка инициализации!')
                     sleep(randint(33, 66)) # Ожидание от 33 до 66 секунд
-            # except:
-            #     pass
+            except:
+                pass
 
 
 
