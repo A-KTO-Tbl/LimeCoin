@@ -270,7 +270,7 @@ class HPV_LimeCoin:
                     # Беспрерывное тапанье, до истечения дневного лимита
                     while True:
                         sleep(uniform(0.33, 0.44)) # Промежуточное ожидание
-                        self.Clicks() # Совершение тапов
+                        self.Clicks(Power_INFO['Power']) # Совершение тапов
                         if self.Clicks_Completed() >= self.Day_Limit():
                             break
 
