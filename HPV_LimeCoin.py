@@ -213,7 +213,7 @@ class HPV_LimeCoin:
         '''Активация бота'''
 
         while True:
-            try:
+            # try:
                 if self.Get_Info()['Status']:
                     self.Logging('Success', self.Name, '🟢', 'Инициализация успешна!')
                     INFO = self.Get_Info()
@@ -223,6 +223,7 @@ class HPV_LimeCoin:
                     Boost = INFO['Boost'] # Кол-во активированных бустов
                     Click_LVL = INFO['Click_LVL'] # Уровень силы клика
                     Limit_LVL = INFO['Limit_LVL'] # Уровень лимита энергии
+                    Power_INFO = self.Get_Power() # Получение информации о текущем мощности майнинга
 
 
                     Daily_Reward = self.Daily_Reward() # Получение ежедневной награды
@@ -255,7 +256,6 @@ class HPV_LimeCoin:
 
                     # Получение кол-ва бустов и их активация
                     if Boost > 0:
-                        Power_INFO = self.Get_Power() # Получение информации о текущем мощности майнинга
                         if Power_INFO['Status']:
                             self.Logging('Success', self.Name, '🚀', f'Бустов доступно: {Boost}!')
                             for _ in range(Boost):
@@ -287,8 +287,8 @@ class HPV_LimeCoin:
                 else: # Если аутентификация не успешна
                     self.Logging('Error', self.Name, '🔴', 'Ошибка инициализации!')
                     sleep(randint(33, 66)) # Ожидание от 33 до 66 секунд
-            except:
-                pass
+            # except:
+            #     pass
 
 
 
